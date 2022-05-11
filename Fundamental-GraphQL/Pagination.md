@@ -62,7 +62,6 @@ query OrganizationForLearningReact {
         }
         cursor
       }
-
     }
   }
 
@@ -72,3 +71,9 @@ fragment FiledAddOrganization on Organization {
   name
 }
 ```
+
+The **totalCount** field discolose the total number of items in the list, while the **pageInfo** field gives you information about two things:
+
+1. **EndCursor**:có thể được sử dụng để truy xuất danh sách kế tiếp, mà chúng tôi đã làm với trường con trỏ, ngoại trừ lần này chúng tôi chỉ cần một trường meta để thực hiện nó. Con trỏ của mục danh sách cuối cùng là đủ để yêu cầu trang tiếp theo của danh sách
+
+2. **hasNextPage**:cung cấp cho bạn thông tin về việc có hay không trang tiếp theo để truy xuất từ API GraphQL. Đôi khi bạn đã tìm nạp trang cuối cùng từ máy chủ của mình. Đối với các ứng dụng sử dụng tính năng cuộn vô hạn để tải thêm trang khi cuộn danh sách, bạn có thể ngừng tìm nạp các trang khi không còn trang nào nữa.
